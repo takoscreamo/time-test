@@ -9,10 +9,10 @@ $ cd src
 $ composer install  
 $ docker compose up -d --build  
 ```
-### http://localhost:8080/ でブラウザにアクセス
+#### http://localhost:8080/ でブラウザにアクセス
 
 ## FeatureTest実行
 ```
-$ docker compose exec php ./vendor/bin/phpunit --testdox  
+$ docker compose exec php ./vendor/bin/phpunit --testsuite=Feature --testdox  
 ```
-
+* NGケースが1件、OKケースが2件実行される
