@@ -1,5 +1,5 @@
 # ベースイメージの指定
-FROM php:fpm-buster
+FROM php:fpm-bullseye
 
 # 作成した設定ファイルをコンテナ内にコピー
 COPY ./container/php/php.ini /usr/local/etc/php/php.ini
@@ -14,7 +14,7 @@ RUN pecl install xdebug \
   && docker-php-ext-enable xdebug
 
 # composerのインストール
-RUN cd /usr/bin && curl -s http://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
+RUN cd /usr/bin && curl -s https://getcomposer.org/installer | php && ln -s /usr/bin/composer.phar /usr/bin/composer
 
-# コンテナ内で作業する際のカレンとディレクトリの指定
+# コンテナ内で作業する際のカレントディレクトリの指定
 WORKDIR /var/www/html
