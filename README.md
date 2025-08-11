@@ -3,11 +3,14 @@
 * プロダクトコード：src/app/Http/Controllers/GetNowController.php
 * テストコード：src/tests/Feature/GetNowTest.php
 
+## 前提事項
+* Docker Desktop がインストールされていること
+* ローカル環境にPHPやComposerをインストールする必要はありません（Dockerコンテナ内で実行されます）
+
 ## 環境設定、ローカル立ち上げ
 ```
-$ cd src  
-$ composer install  
 $ docker compose up -d --build  
+$ docker compose exec php composer install  
 ```
 #### http://localhost:8080/ でブラウザにアクセス
 
